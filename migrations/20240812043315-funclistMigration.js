@@ -4,18 +4,27 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('funclist', {
-      role_id:{
-
+      funclist_id:{
+        type:Sequelize.INTEGER(2),
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+      },
+      funcname:{
+        type: Sequelize.STRING(50),
+        allowNull: false
+      },
+      desc:{
+        type: Sequelize.TEXT('long'),
+        allowNull: true
       }
+
     });
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    
+     await queryInterface.dropTable('funclist');
+     
   }
 };
