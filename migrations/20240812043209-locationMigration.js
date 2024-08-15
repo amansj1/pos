@@ -23,8 +23,12 @@ module.exports = {
         type :Sequelize.STRING(20),
         allowNull: true
     },
-    invnumb: {
+    invnumber: {
         type :Sequelize.STRING(20),
+        allowNull: true
+    },
+    counternumber: {
+        type :Sequelize.INTEGER(10),
         allowNull: true
     },
     accessgranted: {

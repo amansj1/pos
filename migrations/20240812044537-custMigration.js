@@ -19,17 +19,41 @@ module.exports = {
           },
           key:'loc_id'
         }
-      }, 
+      },
+      name:{
+        type: Sequelize.STRING(50),
+        allowNull: false
+      },
+      address:{
+        type: Sequelize.TEXT('long'),
+        allowNull: true
+      },
+      phone:{
+        type: Sequelize.CHAR(16),
+        allowNull: true
+      },
+      status:{
+        type: Sequelize.STRING(8),
+        allowNull: false
+      },
+      createdAt:{
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt:{
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      deletedAt:{
+        type: Sequelize.DATE,
+        allowNull: false
+      }
     });
      
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('customer');
+   
   }
 };
